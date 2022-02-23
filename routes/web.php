@@ -1,10 +1,19 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\PageController;
+
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
+
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\AboutUsController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +47,7 @@ use App\Http\Controllers\PageController;
 // ======================================================
 
 // PRAKTIKUM 2
+
 // Route::get('/', [PageController::class, 'index']);
 
 // Route::get('/about', [PageController::class, 'about']);
@@ -46,10 +56,52 @@ use App\Http\Controllers\PageController;
 
 // ======================================================
 
+// PRAKTIKUM 2
+
+// Route::get('/', [HomeController::class, 'index']);
+
+// Route::get('/about', [AboutController::class, 'index']);
+
+// Route::get('/articles/{id}', [ArticleController::class, 'index']);
+
+// ======================================================
+
 // PRAKTIKUM 3
 
-Route::get('/', [HomeController::class, 'index']);
+// Home
+Route::get('/', function () {
+    return "Ini halaman Home";
+});
 
-Route::get('/about', [AboutController::class, 'index']);
+// Products
+Route::get('/products', [ProductsController::class, 'index']);
+Route::prefix('products')->group(function () {
 
-Route::get('/articles/{id}', [ArticleController::class, 'index']);
+    Route::get('/marbel-edu-games', [ProductsController::class, 'marbelEduGames']);
+
+    Route::get('/marbel-and-friends-kids-games', [ProductsController::class, 'marbelAndFriendsKidsGames']);
+
+    Route::get('/riri-story-books', [ProductsController::class, 'ririStoryBooks']);
+
+    Route::get('/kolak-kids-songs', [ProductsController::class, 'kolakKidsSongs']);
+});
+
+// News
+Route::get('/news', [NewsController::class, 'index']);
+Route::get('/news/{judul}', [NewsController::class, 'newsParam']);
+
+// Program
+Route::get('/program', [ProgramController::class, 'index']);
+Route::prefix('program')->group(function () {
+
+    Route::get('/karir', [ProgramController::class, 'karir']);
+
+    Route::get('/magang', [ProgramController::class, 'magang']);
+
+    Route::get('/kunjungan-industri', [ProgramController::class, 'kunjunganIndustri']);
+});
+
+// About Us
+Route::get('/about-us', [AboutUsController::class, 'index']);
+
+// ======================================================
