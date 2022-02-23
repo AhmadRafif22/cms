@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 
@@ -35,8 +38,18 @@ use App\Http\Controllers\PageController;
 // ======================================================
 
 // PRAKTIKUM 2
-Route::get('/', [PageController::class, 'index']);
+// Route::get('/', [PageController::class, 'index']);
 
-Route::get('/about', [PageController::class, 'about']);
+// Route::get('/about', [PageController::class, 'about']);
 
-Route::get('/articles/{id}', [PageController::class, 'articles']);
+// Route::get('/articles/{id}', [PageController::class, 'articles']);
+
+// ======================================================
+
+// PRAKTIKUM 3
+
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/about', [AboutController::class, 'index']);
+
+Route::get('/articles/{id}', [ArticleController::class, 'index']);
