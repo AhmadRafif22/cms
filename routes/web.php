@@ -69,42 +69,46 @@ use App\Http\Controllers\AboutUsController;
 // PRAKTIKUM 3
 
 // Home
-Route::get('/', function () {
-    return "Ini halaman Home";
-});
+// Route::get('/', function () {
+//     return "Ini halaman Home";
+// });
 
 // Products
-Route::get('/products', [ProductsController::class, 'index']);
-Route::prefix('products')->group(function () {
+// Route::get('/products', [ProductsController::class, 'index']);
+// Route::prefix('products')->group(function () {
 
-    Route::get('/marbel-edu-games', [ProductsController::class, 'marbelEduGames']);
+//     Route::get('/marbel-edu-games', [ProductsController::class, 'marbelEduGames']);
 
-    Route::get('/marbel-and-friends-kids-games', [ProductsController::class, 'marbelAndFriendsKidsGames']);
+//     Route::get('/marbel-and-friends-kids-games', [ProductsController::class, 'marbelAndFriendsKidsGames']);
 
-    Route::get('/riri-story-books', [ProductsController::class, 'ririStoryBooks']);
+//     Route::get('/riri-story-books', [ProductsController::class, 'ririStoryBooks']);
 
-    Route::get('/kolak-kids-songs', [ProductsController::class, 'kolakKidsSongs']);
-});
+//     Route::get('/kolak-kids-songs', [ProductsController::class, 'kolakKidsSongs']);
+// });
 
 // News
-Route::get('/news', [NewsController::class, 'index']);
-Route::get('/news/{judul}', [NewsController::class, 'newsParam']);
+// Route::get('/news', [NewsController::class, 'index']);
+// Route::get('/news/{judul}', [NewsController::class, 'newsParam']);
 
 // Program
-Route::get('/program', [ProgramController::class, 'index']);
-Route::prefix('program')->group(function () {
+// Route::get('/program', [ProgramController::class, 'index']);
+// Route::prefix('program')->group(function () {
 
-    Route::get('/karir', [ProgramController::class, 'karir']);
+//     Route::get('/karir', [ProgramController::class, 'karir']);
 
-    Route::get('/magang', [ProgramController::class, 'magang']);
+//     Route::get('/magang', [ProgramController::class, 'magang']);
 
-    Route::get('/kunjungan-industri', [ProgramController::class, 'kunjunganIndustri']);
-});
+//     Route::get('/kunjungan-industri', [ProgramController::class, 'kunjunganIndustri']);
+// });
 
 // About Us
-Route::get('/about-us', [AboutUsController::class, 'index']);
+// Route::get('/about-us', [AboutUsController::class, 'index']);
 
 // ======================================================
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
