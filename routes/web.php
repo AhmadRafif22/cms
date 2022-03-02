@@ -106,14 +106,38 @@ use App\Http\Controllers\AboutUsController;
 
 // ======================================================
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+// ========= PERTEMUAN 3 =============== //
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Auth::routes();
 
-Auth::routes();
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/shop', function () {
+    return view('shop');
+});
+
+Route::get('/company', function () {
+    return view('shop');
+});
+
+Route::get('/team', function () {
+    return view('team');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/experience', function () {
+    return view('experience');
+});
+
+Route::get('/events', function () {
+    return view('experience');
+});
