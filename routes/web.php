@@ -13,6 +13,8 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\AboutUsController;
 
+use App\Http\Controllers\indexController;
+
 
 
 /*
@@ -114,9 +116,7 @@ use App\Http\Controllers\AboutUsController;
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [indexController::class, 'index']);
 
 Route::get('/shop', function () {
     return view('shop');
