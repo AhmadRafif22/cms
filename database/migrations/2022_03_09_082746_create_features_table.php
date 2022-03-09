@@ -15,6 +15,9 @@ class CreateFeaturesTable extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
+            $table->string('image', 255);
+            $table->string('title', 255);
+            $table->string('description', 255);
             $table->timestamps();
         });
     }
