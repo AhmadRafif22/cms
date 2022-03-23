@@ -141,3 +141,9 @@ Route::get('/experience', function () {
 Route::get('/events', function () {
     return view('experience');
 });
+
+// =============== PRAKTIKUM 6 Authentication ========================= //
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
