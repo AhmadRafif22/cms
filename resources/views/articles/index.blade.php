@@ -7,7 +7,13 @@
 @endif
 
 <table class="table table-bordered" style="width:95%;margin: 0 auto;">
-    <a href="articles/create"><button type="button" class="btn btn-info" style="margin: 20px; color: white;">Tambah Article</button></a>
+    <div class="row">
+        <div style="margin:0px 0px 0px 70px;">
+            <a href="articles/create"><button type="button" class="btn btn-info" style="margin: 20px; color: white;">Tambah Article</button></a>
+            <a class="btn btn-success" href="{{ route('cetak_pdf') }}"> Cetak PDF </a>
+        </div>
+    </div>
+
     <tr>
         <th>Judul</th>
         <th>Konten</th>
