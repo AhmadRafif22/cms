@@ -17,6 +17,7 @@ use App\Http\Controllers\indexController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -147,3 +148,7 @@ Route::get('/events', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// ============================= Pertemuan 10 ======================== // 
+
+Route::resource('articles', ArticleController::class);
